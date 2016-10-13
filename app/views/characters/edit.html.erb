@@ -1,0 +1,16 @@
+
+<h2>Edit <%= @character.name %></h2>
+<%= form_for [@character.house, @character] do |f| %>
+
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+
+  <%= f.label :good_guy %>
+  <%= f.check_box :good_guy %>
+
+  <%= f.label :img_url %>
+  <%= f.text_field :img_url %>
+
+  <%= f.submit %>
+  <%= link_to "Delete Character", house_character_path(@character.house, @character), method: :delete %>
+<% end %>

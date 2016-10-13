@@ -5,6 +5,7 @@ class HousesController < ApplicationController
 
   def show
     @house = House.find(params[:id])
+    @characters = @house.characters.all
   end
 
   def new
@@ -12,7 +13,7 @@ class HousesController < ApplicationController
   end
 
   def create
-    @house = House.create(house_params)
+    @house = House.create!(house_params)
 
     redirect_to house_path(@house)
   end
@@ -29,15 +30,15 @@ class HousesController < ApplicationController
   end
 
   def destroy
-    @model = House.find(params[:id])
-    @model.destroy
+    @house = House.find(params[:id])
+    @house.destroy
 
-    redirect_to models_path
+    redirect_to houses_path
   end
 
   # strong params
   private
-  def model_params
-    params.require(:model).permit(:name, :location, :img_url)
+  def house_params
+    params.require(:house).permit(:name, :location, :img_url)
   end
 end

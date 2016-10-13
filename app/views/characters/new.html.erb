@@ -1,0 +1,15 @@
+<h2>Add New Person</h2>
+
+<%= form_for [@house, @character] do |f| %>
+
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+
+  <%= f.label :good_guy %>
+  <%= f.check_box :good_guy %>
+
+  <%= f.label :img_url %>
+  <%= f.text_field :img_url %>
+
+  <%= f.submit %>
+<% end %>

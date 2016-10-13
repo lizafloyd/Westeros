@@ -1,6 +1,4 @@
 class CharactersController < ApplicationController
-  # replace Character
-      # repla
   def index
     @characters = Character.all
   end
@@ -10,31 +8,36 @@ class CharactersController < ApplicationController
   end
 
   def new
-    @character = Character.new
+    @house = House.find(params[:house_id])
+    @character = @house.characters.build
   end
 
   def create
-    @character = Character.create(character_params)
+    @house = House.find(params[:house_id])
+    @character = @house.characters.create(character_params)
 
-    redirect_to character_path(@character)
+    redirect_to house_path(@house)
   end
 
   def edit
-    @character = Character.find(params[:id])
+    @house = House.find(params[:house_id])
+    @character = @house.characters.find(params[:id])
   end
 
   def update
-    @character = Character.find(params[:id])
+    @house = House.find(params[:house_id])
+    @character = @house.characters.find(params[:id])
     @character.update(character_params)
 
-    redirect_to character_path(@character)
+    redirect_to house_character_path(@character.house, @character)
   end
 
   def destroy
+    @house = House.find(params[:house_id])
     @character = Character.find(params[:id])
     @character.destroy
 
-    redirect_to characters_path
+    redirect_to house_path(@house)
   end
 
   private

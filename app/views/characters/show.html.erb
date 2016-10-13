@@ -1,0 +1,5 @@
+<h2><%= @character.name + " " %><%= link_to "Edit", edit_house_character_path(@character.house, @character) %></h2>
+
+<img src="<%= @character.img_url %>" alt="">
+
+<p><%= @character.good_guy == true ? "Good guy" : "Bad guy" %></p>
