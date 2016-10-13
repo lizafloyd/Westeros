@@ -13,7 +13,30 @@
  *= require_tree .
  *= require_self
  */
-
+body {
+  background-color: #4d4d4d;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  color:white;
+  align-items: center;
+  margin:0;
+  border:0;
+  font-family: 'Nova Flat', cursive;
+}
+header {
+  width:100%;
+  margin:0;
+  border:0;
+  background-image: url('http://images.techtimes.com/data/images/full/225861/the-iron-throne.jpg');
+}
 img {
   width:50%;
+}
+a {
+  text-decoration: none;
+  color: #999999;
+}
+h1 {
+  font-size: 100px;
 }

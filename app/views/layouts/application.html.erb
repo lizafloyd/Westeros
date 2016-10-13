@@ -6,10 +6,14 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+    <link href="https://fonts.googleapis.com/css?family=Nova+Flat" rel="stylesheet">
 
-  <body>
+  </head>
+  <header>
     <h1><%= link_to "Westeros", houses_path %></h1>
+  </header>
+  <body>
+
     <%= yield %>
   </body>
 </html>

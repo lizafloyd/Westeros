@@ -5,8 +5,10 @@
 
 People:
 
-<p><%= link_to "Add a Person", new_house_character_path(@house) %></p>
 
 <% @characters.each do |peep| %>
   <p><%= link_to peep.name, house_character_path(@house, peep) %></p>
 <% end %>
+
+
+<p><%= link_to "Add a Person", new_house_character_path(@house) %></p>
